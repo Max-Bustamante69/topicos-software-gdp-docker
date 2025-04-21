@@ -48,6 +48,8 @@ Este documento sirve como evidencia de la realización del Tutorial 05, enfocado
 **A4.** Ir a "Modules" y lanzar el AWS Academy Learner Lab.
 
 **A5.** Iniciar el laboratorio → Esperar luz verde → Click en AWS.
+![image](https://github.com/user-attachments/assets/9b43ce0c-41d1-41e9-aaff-170adf06bb0d)
+
 
 **A6.** Buscar "EC2" y dar click en "Launch Instance".
 
@@ -57,13 +59,16 @@ Este documento sirve como evidencia de la realización del Tutorial 05, enfocado
 - Tipo: t2.micro
 - Key Pair: *Proceed without key pair*
 - Red: Activar HTTP y HTTPS
+  ![image](https://github.com/user-attachments/assets/3ef5bebc-3c43-41e2-a28a-8582d04c7eb1)
+
 
 **A8.** Lanzar instancia y esperar a que esté disponible.
 
 **A9.** Ir a "Instances", seleccionar la instancia → "Connect" → Usar "EC2 Instance Connect" → "Connect".
 
 <!-- Insertar screenshot de conexión exitosa -->
-![Conexión EC2](ruta/a/screenshot_conexion_ec2.png)
+![image](https://github.com/user-attachments/assets/51efdacf-aae5-464f-a97e-ac1a5b84d5b2)
+
 
 ---
 
@@ -79,7 +84,8 @@ docker --version
 ```
 
 <!-- Screenshot Docker version -->
-![Docker instalado](ruta/a/screenshot_docker_version.png)
+![image](https://github.com/user-attachments/assets/b30df39c-eef2-418e-90f7-3ac5a1e56bd8)
+
 
 **B2.** Desde la consola AWS, buscar "RDS" → "Create database".
 
@@ -92,17 +98,22 @@ docker --version
 - Usuario: admin
 - Contraseña: (segura y propia)
 - Click en "Create database"
+![image](https://github.com/user-attachments/assets/e2d23426-c0bf-4ae0-b1ec-c14e9ca6141a)
+
 
 **B4.** Acceder al “VPC Security Group” de la base de datos:
 
 - Ir a "Edit inbound rules"
 - Añadir regla que permita acceso desde IP pública de EC2
+![image](https://github.com/user-attachments/assets/094f8c7a-e7bf-44c3-a01a-ed74452b7ab3)
 
 **B5.** Instalar cliente MySQL (MariaDB):
 
 ```bash
 sudo dnf install -y mariadb105
 ```
+![image](https://github.com/user-attachments/assets/4d91dde7-762a-4d05-8625-088d84f89a06)
+
 
 **B6.** Conectarse a la base de datos:
 
@@ -117,6 +128,7 @@ CREATE DATABASE djangodocker;
 ```
 
 Salir con `exit`.
+![image](https://github.com/user-attachments/assets/b2d7a0cf-9b58-4470-a1ff-3901cac06479)
 
 ---
 
@@ -127,6 +139,8 @@ Salir con `exit`.
 ```bash
 sudo docker container run hello-world
 ```
+![image](https://github.com/user-attachments/assets/ae47f9df-7f2a-4870-b0d9-209ce12a1a83)
+
 
 **C2.** Instalar git:
 
@@ -163,13 +177,16 @@ Modificar con:
 Guardar con `Ctrl+X`, luego `Y` y `Enter`.
 
 <!-- Screenshot del .env modificado -->
-![Archivo .env](ruta/a/screenshot_env_modificado.png)
+![image](https://github.com/user-attachments/assets/fb67ddd3-bc30-489e-a772-d759834aed75)
+
 
 **C6.** Construir imagen Docker:
 
 ```bash
 sudo docker image build -t django-app .
 ```
+![image](https://github.com/user-attachments/assets/d294eae8-5dc9-4126-aa49-d5877d3d05e0)
+
 
 **C7.** Ejecutar contenedor:
 
@@ -181,9 +198,11 @@ sudo docker container run -d --name django-docker -p 80:80 django-app
 
 - Obtener IP pública de EC2 desde consola AWS
 - Ir a `http://<IP_PUBLICA_EC2>/public`
+  
 
 <!-- Screenshot acceso web -->
-![Acceso app Django](ruta/a/screenshot_app_django.png)
+![image](https://github.com/user-attachments/assets/94513187-02a6-420b-bfc3-d0a3432d470c)
+
 
 ---
 
